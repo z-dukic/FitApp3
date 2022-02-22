@@ -16,10 +16,15 @@ class HeaderComponent extends React.Component {
                 <header>
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                         <div>
-                            <a href="www.#.com" className="navbar-brand">Home</a>
+                            <a href="www.localhost:3000/home" className="navbar-brand">Home</a>
+                            <a href="www.localhost:3000/" className="navbar-brand">nav1</a>
+                            <a href="www.localhost:3000/" className="navbar-brand">nav2</a>
+                            <a href="www.localhost:3000/" className="navbar-brand">nav3</a>
                         </div>
+
                     </nav>
                 </header>
+                
 
             </div>
 

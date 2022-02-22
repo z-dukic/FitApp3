@@ -5,6 +5,8 @@ import React from 'react';
 
 import FooterComponent from '../FooterComponent/FooterComponent';
 import HeaderComponent from '../HeaderComponent/HeaderComponent';
+import FoodDisplay from '../FoodDisplay/FoodDisplay';
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <HeaderComponent />
         <div className="container">
           <Switch>
+          <Route path = "/" exact component = {FoodDisplay}></Route>
 
 
           </Switch>
