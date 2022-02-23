@@ -27,7 +27,7 @@ class AddFood extends Component {
     e.preventDefault();
 
     let food = {
-      footName: this.state.foodName,
+      foodName: this.state.foodName,
       foodKcal: this.state.foodKcal,
       foodProtein: this.state.foodProtein,
       foodCarb: this.state.foodCarb,
@@ -42,9 +42,9 @@ class AddFood extends Component {
     })
   }
 
-  //take value and use it
+  //take value and use it //you can't edit form without it
   changeFoodNameHandler = (event) => {
-    this.setState({ firstName: event.target.value });
+    this.setState({ foodName: event.target.value });
   }
 
   changeFoodKcalHandler = (event) => {
@@ -88,7 +88,7 @@ class AddFood extends Component {
 
                 <div className="form-group">
                   <label> Kcal: </label>
-                  <input placeholder="kcal" name="foodKcal" className="form-control"
+                  <input placeholder="Calories" name="foodKcal" className="form-control"
                     value={this.state.foodKcal} onChange={this.changeFoodKcalHandler} />
                 </div>
 
