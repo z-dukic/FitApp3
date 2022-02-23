@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import FoodService from '../Util/FoodService';
+import FoodService from '../services/FoodService';
 
-class AddFood extends Component {
+class CreateFoodComponent extends Component {
   constructor(props) {
     super(props);
 
+    //initialize 
     this.state = {
-      //initialize 
       foodName: '',
       foodKcal: '',
       foodProtein: '',
@@ -21,6 +21,7 @@ class AddFood extends Component {
     this.changeFoodProteinHandler = this.changeFoodProteinHandler.bind(this);
     this.changeFoodCarbHandler = this.changeFoodCarbHandler.bind(this);
     this.changeFoodFatHandler = this.changeFoodFatHandler.bind(this);
+    this.saveFood = this.saveFood.bind(this);
   }
 
   saveFood = (e) => {
@@ -39,7 +40,7 @@ class AddFood extends Component {
 
     FoodService.createFood(food).then(res => {
       this.props.history.push('/food');
-    })
+    });
   }
 
   //take value and use it //you can't edit form without it
@@ -110,7 +111,7 @@ class AddFood extends Component {
                     value={this.state.foodFat} onChange={this.changeFoodFatHandler} />
                 </div>
 
-                <button className="btn btn-success" onClick={this.saveFood}>Save</button>
+                <button className="btn btn-success" onClick={this.saveFood}>Save </button>
                 <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Cancel</button>
 
               </form>
@@ -135,4 +136,4 @@ class AddFood extends Component {
 }
 
 
-export default AddFood
+export default CreateFoodComponent 

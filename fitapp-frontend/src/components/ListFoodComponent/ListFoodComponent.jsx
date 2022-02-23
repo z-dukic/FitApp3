@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import FoodService from "../Util/FoodService";
-import './FoodList.css';
+import FoodService from "../services/FoodService";
+import './ListFoodComponent.css';
 
-class FoodList extends React.Component {
+class ListFoodComponent extends React.Component {
     constructor(props) {
         super(props)
 
@@ -14,6 +14,7 @@ class FoodList extends React.Component {
         //Bind object to action(else it's undefined)
         this.addFood = this.addFood.bind(this);
     }
+
 
     //Component gets called after its mounted
     componentDidMount() {
@@ -88,4 +89,4 @@ class FoodList extends React.Component {
 
 }
 
-export default FoodList
+export default ListFoodComponent

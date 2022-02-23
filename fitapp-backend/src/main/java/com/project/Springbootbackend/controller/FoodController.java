@@ -21,8 +21,9 @@ public class FoodController {
         return foodRepository.findAll();
     }
 
-    @PostMapping("/addFood")
-    public Food addFood(@RequestBody Food food){
+    //add food
+    @PostMapping("/food")
+    public Food createFood(@RequestBody Food food){
         return foodRepository.save(food);
     }
 
