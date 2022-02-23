@@ -7,6 +7,11 @@ class FoodService{
     getFood(){
         return axios.get(FOOD_API_BASE_URL);
     }
+
+    addFood(food){
+        return axios.get(FOOD_API_BASE_URL, food);
+    }
+
 }
 
 export default new FoodService()

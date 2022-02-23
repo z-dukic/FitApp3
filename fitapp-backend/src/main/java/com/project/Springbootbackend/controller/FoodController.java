@@ -3,10 +3,7 @@ package com.project.Springbootbackend.controller;
 import com.project.Springbootbackend.model.Food;
 import com.project.Springbootbackend.repository.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,7 +21,15 @@ public class FoodController {
         return foodRepository.findAll();
     }
 
-    
+    @PostMapping("/addFood")
+    public Food addFood(@RequestBody Food food){
+        return foodRepository.save(food);
+    }
+
+
+
+
+
 
 
 

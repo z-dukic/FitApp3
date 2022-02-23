@@ -5,7 +5,8 @@ import React from 'react';
 
 import FooterComponent from '../FooterComponent/FooterComponent';
 import HeaderComponent from '../HeaderComponent/HeaderComponent';
-import FoodDisplay from '../FoodDisplay/FoodDisplay';
+import FoodList from '../FoodList/FoodList';
+import AddFood from '../AddFood/AddFood';
 
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
         <HeaderComponent />
         <div className="container">
           <Switch>
-          <Route path = "/" exact component = {FoodDisplay}></Route>
+          <Route path = "/" exact component = {FoodList}></Route>
+          <Route path = "/food" component = {FoodList}></Route>
+          <Route path="/add-food" component = {AddFood}></Route>
 
 
           </Switch>

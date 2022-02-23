@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import FoodService from "../Util/FoodService";
+import './FoodList.css';
 
-class FoodDisplay extends React.Component {
+class FoodList extends React.Component {
     constructor(props) {
         super(props)
 
@@ -10,6 +11,8 @@ class FoodDisplay extends React.Component {
             food: []
 
         }
+        //Bind object to action(else it's undefined)
+        this.addFood = this.addFood.bind(this);
     }
 
     //Component gets called after its mounted
@@ -22,11 +25,19 @@ class FoodDisplay extends React.Component {
 
     }
 
+    //Route - simple say "go to /add-food", you can also pass the state ("/add-food", { state: 'sample data'});
+    addFood(){
+        this.props.history.push('/add-food');
+    }
+
     render() {
         return (
 
             <div>
                 <h2 className="text-center">Food database</h2>
+                <div className = "row" className="w-25 p-3">
+                    <button className="btn btn-primary" onClick={this.addFood}> Add Food</button>
+                 </div>
                 <div className="row">
                     <table className="table table-striped table-bordered">
                         <thead>
@@ -77,4 +88,4 @@ class FoodDisplay extends React.Component {
 
 }
 
-export default FoodDisplay
+export default FoodList
