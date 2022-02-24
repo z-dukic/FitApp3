@@ -12,15 +12,18 @@ class FoodService {
         return axios.post(FOOD_API_BASE_URL, food);
     }
 
-    getFoodById(foodId){
+    getFoodById(foodId) {
         return axios.get(FOOD_API_BASE_URL + '/' + foodId);
     }
 
-    updateFood(food, foodId){
-        return axios.put(FOOD_API_BASE_URL + '/'+ foodId, food);
+    updateFood(food, foodId) {
+        return axios.put(FOOD_API_BASE_URL + '/' + foodId, food);
     }
 
+    deleteFood(foodId) {
+        return axios.delete(FOOD_API_BASE_URL + '/' + foodId);
 
+    }
 
 }
 

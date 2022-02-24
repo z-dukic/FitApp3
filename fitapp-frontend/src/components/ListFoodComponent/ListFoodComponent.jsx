@@ -35,6 +35,12 @@ class ListFoodComponent extends React.Component {
         this.props.history.push(`/update-food/${id}`);
     }
 
+    deleteFood(id){
+        FoodService.getFood().then((res) => {
+            this.setState({food: this.state.food.filter(food => food.id !== id)})
+        });
+    }
+
     render() {
         return (
 
