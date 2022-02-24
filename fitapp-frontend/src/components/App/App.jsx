@@ -8,6 +8,7 @@ import HeaderComponent from '../HeaderComponent/HeaderComponent';
 import CreateFoodComponent from '../CreateFoodComponent/CreateFoodComponent';
 import ListFoodComponent from '../ListFoodComponent/ListFoodComponent';
 import UpdateFoodComponent from '../UpdateFoodComponent/UpdateFoodComponent';
+import ViewFoodComponent from '../ViewFoodComponent/ViewFoodComponent';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path = "/food" component = {ListFoodComponent}></Route>
           <Route path="/add-food" component = {CreateFoodComponent}></Route>
           <Route path="/update-food/:id" component = {UpdateFoodComponent}></Route> 
+          <Route path="/view-food/:id" component = {ViewFoodComponent}></Route>
 
 
           </Switch>

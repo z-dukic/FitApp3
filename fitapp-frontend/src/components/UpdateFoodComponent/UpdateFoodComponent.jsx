@@ -52,7 +52,7 @@ class UpdateFoodComponent extends Component {
         //console log to track food object
         console.log('food =>' + JSON.stringify(food));
 
-        FoodService.updateFood(food,this.state.id).then(res => {
+        FoodService.updateFood(food, this.state.id).then(res => {
             this.props.history.push('/food');
         });
 

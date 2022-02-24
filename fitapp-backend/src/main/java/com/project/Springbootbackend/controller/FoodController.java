@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -54,6 +56,16 @@ public class FoodController {
         Food updatedFood = foodRepository.save(food);
 
         return ResponseEntity.ok(updatedFood);
+    }
+
+    @DeleteMapping("/food/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteFood(@PathVariable Long id){
+        Food food = foodRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Food not found with id: " + id));
+
+        foodRepository.delete(food);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return ResponseEntity.ok(response);
     }
 
 

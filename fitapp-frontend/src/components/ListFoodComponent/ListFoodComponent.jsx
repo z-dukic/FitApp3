@@ -13,6 +13,8 @@ class ListFoodComponent extends React.Component {
         }
         //Bind object to action(else it's undefined)
         this.addFood = this.addFood.bind(this);
+        this.editFood = this.editFood.bind(this);
+        this.deleteFood = this.deleteFood.bind(this);
     }
 
 
@@ -36,10 +38,16 @@ class ListFoodComponent extends React.Component {
     }
 
     deleteFood(id){
-        FoodService.getFood().then((res) => {
+        FoodService.deleteFood(id).then((res) => {
             this.setState({food: this.state.food.filter(food => food.id !== id)})
         });
     }
+
+    viewFood(id ){
+        this.props.history.push(`/view-food/${id}`);
+    }
+
+
 
     render() {
         return (
