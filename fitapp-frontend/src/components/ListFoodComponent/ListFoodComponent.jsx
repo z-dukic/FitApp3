@@ -31,6 +31,10 @@ class ListFoodComponent extends React.Component {
         this.props.history.push('/add-food');
     }
 
+    editFood(id){
+        this.props.history.push(`/update-food/${id}`);
+    }
+
     render() {
         return (
 
@@ -61,7 +65,11 @@ class ListFoodComponent extends React.Component {
                                             <td> {food.foodProtein}</td>
                                             <td> {food.foodCarb}</td>
                                             <td> {food.foodFat}</td>
-                                            <td> PlaceHolder</td>
+                                            <td>
+                                                <button className="btn btn-info" onClick={() => this.editFood(food.id)}>Update</button>
+                                                <button style={{marginLeft: "10px"}} onClick={ () => this.deleteFood(food.id)} className="btn btn-danger">Delete </button>
+                                                <button style={{marginLeft: "10px"}} onClick={ () => this.viewFood(food.id)} className="btn btn-info">View </button>
+                                            </td>
                                         </tr>
                                 )
                             }
